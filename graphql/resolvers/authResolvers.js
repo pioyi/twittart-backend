@@ -31,7 +31,7 @@ module.exports = {
             })
 
             // Hashing password
-            hashedPassword = await bcrypt.hash(password, 12)
+            const hashedPassword = await bcrypt.hash(password, 12)
 
             const newUser = new UserModel({
                 username, 
@@ -69,7 +69,7 @@ module.exports = {
             })
 
             // Signing json web token
-            token = signToken(targetUser)
+            const token = signToken(targetUser)
 
             return {
                 username,
